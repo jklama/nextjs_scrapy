@@ -2,27 +2,27 @@
 
 
 
-// import { scrapeAndStoreProduct } from '@/lib/actions';
+import { scrapeAndStoreProduct } from '@/lib/actions';
 import { FormEvent, useState } from 'react'
 
-// const isValidAmazonProductURL = (url: string) => {
-//   try {
-//     const parsedURL = new URL(url);
-//     const hostname = parsedURL.hostname;
+const isValidAmazonProductURL = (url: string) => {
+  try {
+    const parsedURL = new URL(url);
+    const hostname = parsedURL.hostname;
 
-//     if(
-//       hostname.includes('amazon.com') || 
-//       hostname.includes ('amazon.') || 
-//       hostname.endsWith('amazon')
-//     ) {
-//       return true;
-//     }
-//   } catch (error) {
-//     return false;
-//   }
+    if(
+      hostname.includes('amazon.com') || 
+      hostname.includes ('amazon.') || 
+      hostname.endsWith('amazon')
+    ) {
+      return true;
+    }
+  } catch (error) {
+    return false;
+  }
 
-//   return false;
-// }
+  return false;
+}
 
 const Searchbar = () => {
   const [searchPrompt, setSearchPrompt] = useState('');
